@@ -6,24 +6,30 @@ const NewEmployeeView = (props) => {
 
   return (
     <div className="root">
+      <nav class="navMenu">
+        <a href="http://localhost:3000/">Home</a>
+        <a href="http://localhost:3000/employees">Employees</a>
+        <a href="http://localhost:3000/tasks">Tasks</a>
+        <div class="dot"></div>
+      </nav>
       <div className="formContainer">
         <div className="formTitle">
-          <h2 style={{fontWeight: 'bold', fontFamily: 'Courier, sans-serif', fontSize: '20px', color: '#11153e'}}>
+          <h2>
             New Employee
           </h2>
         </div>
-        <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
-          <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <label>First Name: </label>
           <input type="text" name="firstName" onChange ={(e) => handleChange(e)} />
           <br/>
           <br/>
 
-          <label style={{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
+          <label>Last Name: </label>
           <input type="text" name="lastName" onChange={(e) => handleChange(e)} />
           <br/>
           <br/>
 
-          <label style={{color:'#11153e', fontWeight: 'bold'}}>Department: </label>
+          <label>Department: </label>
           <input type="text" name="department" onChange={(e) => handleChange(e)} />
           <br/>
           <br/>

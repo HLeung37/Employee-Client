@@ -61,7 +61,9 @@ export const deleteEmployeeThunk = employeeId => async dispatch => {
     await axios.delete(`${path}/employees/${employeeId}`);
     //delete succesful so change state with dispatch
     dispatch(ac.deleteTask(employeeId));
+    window.location.reload();
   } catch(err) {
+    alert("User cannot be deleted due to having tasks assigned to");
     console.error(err);
   }
 };
@@ -92,6 +94,7 @@ export const deleteTaskThunk = taskId => async dispatch => {
     await axios.delete(`${path}/tasks/${taskId}`);
     //delete succesful so change state with dispatch
     dispatch(ac.deleteTask(taskId));
+    window.location.reload();
   } catch(err) {
     console.error(err);
   }

@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const AllEmployeesView = (props) => {
-  console.log(props);
   let {allEmployees ,deleteEmployee} = props;
 
   if (!allEmployees.length) {
@@ -17,16 +16,26 @@ const AllEmployeesView = (props) => {
 
   return (
     <div>
+      <nav class="navMenu">
+        <a href="http://localhost:3000/">Home</a>
+        <a href="http://localhost:3000/employees">Employees</a>
+        <a href="http://localhost:3000/tasks">Tasks</a>
+        <div class="dot"></div>
+      </nav>
       {allEmployees.map((employee) => {
         let name = employee.firstName + " " + employee.lastName;
         return (
-          <div key={employee.id}>
-          <Link to={`/employee/${employee.id}`}>
-            <h1>{name}</h1>
-          </Link>
-          <p>{employee.department}</p>
-          <button onClick={() => deleteEmployee(employee.id)}>Delete</button>
-        </div>
+          <div class = "width">
+            <blockquote>
+              <div key={employee.id}>
+                <Link to={`/employee/${employee.id}`}>
+                  <h3>{name}</h3>
+                </Link>
+                <p>{employee.department}</p>
+                <button onClick={() => deleteEmployee(employee.id)}>Delete</button>
+              </div>
+            </blockquote>
+          </div>
         );
 
       })}

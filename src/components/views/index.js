@@ -1,4 +1,6 @@
 // Barrel file for presentational components, which will be used to compose our smart containers;
+import './Overall.css'
+
 export { default as AllEmployeesView } from "./AllEmployeesView";
 export { default as AllTasksView } from "./AllTasksView";
 export { default as NewTaskView } from "./NewTaskView";

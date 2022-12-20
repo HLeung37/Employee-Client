@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+
+.dynamic-text-shadow {
+  /*  larger font size, more shadow distance  */
+  text-shadow: .1em .1em 0 hsl(0, 0%, 21%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 500;
+  font-family:'Montserrat';
+}
+
+.width {
+    max-width:390px;
+    text-align: center;
+    padding-left: 5px;
+    margin:0 auto;
+    width:auto;
+    display:table
+}
+
+html {
+  block-size: 100%;
+  background: hsl(0, 0%, 10%);
+  color: hsl(200 50% 90%);
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+code {
+  color: white;
+}
+
+header {
+  display: grid;
+  gap: 1ch;
+}
+
+body {
+  place-content: center;
+  padding: 5vmin;
+  font-family: "Montserrat", sans-serif;
+}
+
+.navMenu {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+ a {
+  color: #f6f4e6;
+  text-decoration: none;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  width: 160px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+ a:hover {
+  color: #fddb3a;
+}
+
+.navMenu .dot {
+  width: 6px;
+  height: 6px;
+  background: #fddb3a;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transform: translateX(60px);
+  transform: translateX(60px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+ a:nth-child(1):hover ~ .dot {
+  -webkit-transform: translateX(60px);
+  transform: translateX(60px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+ a:nth-child(2):hover ~ .dot {
+  -webkit-transform: translateX(220px);
+  transform: translateX(220px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+ a:nth-child(3):hover ~ .dot {
+  -webkit-transform: translateX(400px);
+  transform: translateX(400px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+blockquote {
+	position: relative;
+	margin: 40px 0;
+	padding: 1.6em 2.4em .7em calc(1.4em + var(--quote-image-width));
+	font: italic 1.2rem var(--type-quote);
+	background: var(--quote-bg) no-repeat left / var(--quote-image-width);
+	border-radius: var(--border-rad);
+	border: 2px solid white;
+	box-shadow: 2px 2px 4px hsl(0 0% 0% / 20%);
+}

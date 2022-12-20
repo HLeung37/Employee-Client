@@ -63,24 +63,33 @@ class EditTaskContainer extends Component {
         }
 
         return (
-            <form style={{textAlign: 'center'}} onSubmit={(e) => this.handleSubmit(e)}>
-            <label style= {{color:'#11153e', fontWeight: 'bold'}}>Description: </label>
-            <input type="text" name="description" value={this.state.description} onChange ={(e) => this.handleChange(e)}/>
-            <br/>
+          <div>
+            <nav class="navMenu">
+              <a href="http://localhost:3000/">Home</a>
+              <a href="http://localhost:3000/employees">Employees</a>
+              <a href="http://localhost:3000/tasks">Tasks</a>
+              <div class="dot"></div>
+            </nav>
+            <br></br><br></br>
+              <form onSubmit={(e) => this.handleSubmit(e)}>
+              <label>Description: </label>
+              <input type="text" name="description" value={this.state.description} onChange ={(e) => this.handleChange(e)}/>
+              <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Priority Level: </label>
-            <input type="text" name="priorityLevel" value={this.state.priorityLevel} onChange={(e) => this.handleChange(e)}/>
-            <br/>
+              <label>Priority Level: </label>
+              <input type="text" name="priorityLevel" value={this.state.priorityLevel} onChange={(e) => this.handleChange(e)}/>
+              <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Assign: </label>
-            <input type="text" name="employeeId" value={this.state.employeeId} onChange={(e) => this.handleChange(e)} />
-            <br/>
+              <label>Assign: </label>
+              <input type="text" name="employeeId" value={this.state.employeeId} onChange={(e) => this.handleChange(e)} />
+              <br/>
 
-            <button type="submit">
-              Submit
-            </button>
+              <button type="submit">
+                Submit
+              </button>
 
-          </form>
+            </form>
+          </div>
         )
     }
 }

@@ -62,16 +62,24 @@ class EditEmployeeContainer extends Component {
         }
 
         return (
-            <form style={{textAlign: 'center'}} onSubmit={(e) => this.handleSubmit(e)}>
-            <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
+          <div>
+            <nav class="navMenu">
+              <a href="http://localhost:3000/">Home</a>
+              <a href="http://localhost:3000/employees">Employees</a>
+              <a href="http://localhost:3000/tasks">Tasks</a>
+              <div class="dot"></div>
+            </nav>
+            <br></br><br></br>
+            <form onSubmit={(e) => this.handleSubmit(e)}>
+            <label>First Name: </label>
             <input type="text" name="firstName" value={this.state.firstName} onChange ={(e) => this.handleChange(e)}/>
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
+            <label>Last Name: </label>
             <input type="text" name="lastName" value={this.state.lastName} onChange={(e) => this.handleChange(e)}/>
             <br/>
 
-            <label style={{color:'#11153e', fontWeight: 'bold'}}>Department: </label>
+            <label>Department: </label>
             <input type="text" name="department" value={this.state.department} onChange={(e) => this.handleChange(e)} />
             <br/>
 
@@ -80,6 +88,7 @@ class EditEmployeeContainer extends Component {
             </button>
 
           </form>
+        </div>
         )
     }
 }
